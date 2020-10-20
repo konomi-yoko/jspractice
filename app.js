@@ -11,6 +11,11 @@ console.log('----------------1. 偶数、奇数----------------');
  */
 
 let i = 2;
+  if (i % 2 === 0) {
+  	console.log(`${i}は偶数です。`)
+  } else {
+  	console.log(`${i}は奇数です。`)
+  }
 
 console.log('----------------2. 合格判定----------------');
 /**
@@ -21,6 +26,13 @@ console.log('----------------2. 合格判定----------------');
  */
 let math = 50;
 let english = 100;
+let total = math + english;
+
+if (math >= 60 && english >= 60 && total >= 140) {
+	console.log('合格');
+} else {
+	console.log('不合格');
+}
 
 
 console.log('----------------3. 数を数える----------------');
@@ -29,7 +41,16 @@ console.log('----------------3. 数を数える----------------');
  * を書いてください。
  * ※繰り返し文とif文を使用します。
  */
+
+let three = 0;
 let numbers = [1, 3, 4, 5, 8, 9, 3, 3];
+
+for (let value of numbers) {
+	if (value === 3){
+		three++;
+	}
+}
+		console.log(three);
 
 
 console.log('----------------4. 3倍した数を表示する----------------');
@@ -37,6 +58,11 @@ console.log('----------------4. 3倍した数を表示する----------------');
  * 1から10までの数字をそれぞれ3倍した数字を表示するプログラムを書いてください。
  * 3 6 9 ... 30 までが表示されればOKです
  */
+
+for (let i = 1; i <= 10; i++) {
+  console.log(i * 3);
+}
+
 
 console.log('----------------5. FizzBuzz----------------');
 /**
@@ -48,15 +74,46 @@ console.log('----------------5. FizzBuzz----------------');
  * と表示するようにしてください。
  */
 
+
+for (let i = 1; i <= 100; i++) {
+	if (i % 3 === 0) {
+	console.log('Fizz');
+	} else if (i % 5 === 0) {
+	console.log('Bizz');
+	} else if (i % 3 === 0 && i % 5 === 0) {
+	console.log('FizzBuzz');
+	} else {
+	console.log(i);
+	}
+}
+
 console.log('----------------6.九九----------------');
 /**
  * 九九を表示するプログラムを書いてください。
  */
 
+for (let i = 1; i <= 9; i++) {
+  for (let j = 1; j <= 9; j++) {
+    let k = i * j;
+    console.log(k);
+  }
+}
+
+
 console.log('----------------7. 繰り返しの中断、スキップ----------------');
 /**
  * 九九の中で答えが30未満の数値だけ表示してください。
  */
+for (let i = 1; i <= 9; i++) {
+  for (let j = 1; j <= 9; j++) {
+    let k = i * j;
+
+    if (k >= 30) {
+    continue;
+    }
+    console.log(k);
+  }
+}
 
 
 // チャレンジ問題
@@ -69,6 +126,20 @@ console.log('----------------1. 女湯問題----------------');
  * genderは male, female, otherのいずれかにしてください。
  * 女湯に入れる場合は「入れます」、入れない場合は「入れない」と表示してください。
  */
+
+let customer = {age: '5', gender:'famale'};
+
+if (customer['gender'] === 'famale') {
+	console.log('入れます');
+}else {
+	if (customer['age'] >= 6) {
+		console.log('入れます');
+	} else {
+		console.log('入れません');
+	}
+}
+
+
 
 console.log('----------------2. 素数を表示するプログラム----------------');
 /**
