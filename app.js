@@ -12,10 +12,20 @@ console.log('----------------1. 偶数、奇数----------------');
 
 let i = 2;
   if (i % 2 === 0) {
-  	console.log(`${i}は偶数です。`)
+  	console.log(`${i}は偶数です。`);
   } else {
-  	console.log(`${i}は奇数です。`)
+  	console.log(`${i}は奇数です。`);
   }
+
+// switch
+switch (i % 2 === 0) {
+	case true:
+		console.log(i + 'は偶数です');
+		break;
+	default:
+	console.log(i +  'は奇数です');
+	break;
+}
 
 console.log('----------------2. 合格判定----------------');
 /**
@@ -28,11 +38,26 @@ let math = 50;
 let english = 100;
 let total = math + english;
 
-if (math >= 60 && english >= 60 && total >= 140) {
-	console.log('合格');
-} else {
-	console.log('不合格');
-}
+// if (math >= 60 && english >= 60 && total >= 140) {
+// 	console.log('合格');
+// } else {
+// 	console.log('不合格');
+// }
+
+// if (math >= 60) {
+// 	if (english >= 60) {
+// 		if (total >= 140) {
+// 			console.log('合格');
+// 		}else{
+// 			console.log('totalが足りなくて不合格');
+// 		}
+// 	}else{
+// 		console.log('英語点がたりなくて不合格');
+// 	}else{
+// 		console.log('数学点がたりなくて不合格');
+// 	}
+// }
+
 
 
 console.log('----------------3. 数を数える----------------');
@@ -45,12 +70,22 @@ console.log('----------------3. 数を数える----------------');
 let three = 0;
 let numbers = [1, 3, 4, 5, 8, 9, 3, 3];
 
-for (let value of numbers) {
-	if (value === 3){
-		three++;
-	}
-}
-		console.log(three);
+// for (let value of numbers) {
+	// 3を見つけた時
+	// if (value === 3){
+		// 1つ見つけたと記録しておく
+		// res++はres = res + 1 と同じ意味
+		// three++;
+	// }
+// }
+		// console.log(three);
+
+// for (let i = 0; i < 9; i++) {
+// 	if (numbers[i] === 3){
+// 		res = res + 1;
+// 	}
+// }
+// console.log(res);
 
 
 console.log('----------------4. 3倍した数を表示する----------------');
@@ -74,18 +109,34 @@ console.log('----------------5. FizzBuzz----------------');
  * と表示するようにしてください。
  */
 
+// for (let i = 1; i <= 100; i++) {
+// 	if (i % 3 === 0) {
+// 	console.log('Fizz');
+// 	} else if (i % 5 === 0) {
+// 	console.log('Bizz');
+// 	} else if (i % 3 === 0 && i % 5 === 0) {
+// 	console.log('FizzBuzz');
+// 	} else {
+// 	console.log(i);
+// 	}
+// }
 
-for (let i = 1; i <= 100; i++) {
-	if (i % 3 === 0) {
-	console.log('Fizz');
-	} else if (i % 5 === 0) {
-	console.log('Bizz');
-	} else if (i % 3 === 0 && i % 5 === 0) {
-	console.log('FizzBuzz');
-	} else {
-	console.log(i);
+let moji ='';
+for (let i = 1; i < 100; i++) {
+	moji = i;
+	if (i % 3 === 0){
+		moji = 'Fizz';
 	}
+	if (i % 5 === 0){
+		if (moji != 'Fizz'){
+			moji = '';
+		}
+		moji = moji + 'Buzz';
+	}
+	console.log(moji);
 }
+
+
 
 console.log('----------------6.九九----------------');
 /**
@@ -93,9 +144,10 @@ console.log('----------------6.九九----------------');
  */
 
 for (let i = 1; i <= 9; i++) {
+	console.log(`${i}の段`);
   for (let j = 1; j <= 9; j++) {
     let k = i * j;
-    console.log(k);
+    console.log(`${i}x${j}=${k}`);
   }
 }
 
@@ -132,7 +184,7 @@ let customer = {age: '5', gender:'famale'};
 if (customer['gender'] === 'famale') {
 	console.log('入れます');
 }else {
-	if (customer['age'] >= 6) {
+	if (customer['age'] <= 6) {
 		console.log('入れます');
 	} else {
 		console.log('入れません');
